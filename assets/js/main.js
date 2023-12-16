@@ -45,8 +45,9 @@ function displaySitesList() {
       </button>
     </td>
   </tr>`;
-    document.getElementById("tableBody").innerHTML = cartona;
+    
   }
+  document.getElementById("tableBody").innerHTML = cartona;
 }
 
 function clearInputs() {
