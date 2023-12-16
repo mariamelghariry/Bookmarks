@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="icon" href="assets/imgs/bookmark.ico" />
+    <!-- !=========Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <!-- !=========Fontawsome -->
+    <script
+      src="https://kit.fontawesome.com/2a9ac34a9d.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- !=========Bootstrap css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- !=========main style css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <h1 class="mx-auto my-5 display-4">Bookmarker</h1>
+
+    <div class="mt-5 py-5 info-box w-80 mx-auto">
+      <div
+        class="d-flex justify-content-center align-items-lg-baseline gap-2 grediant"
+      >
+        <i class="fa-solid fa-bookmark fs-3"></i>
+        <h4 class="">Bookmark your sites</h4>
+        <i class="fa-solid fa-bookmark fs-3"></i>
+      </div>
+      <div class="d-flex flex-column mx-auto gap-4 mt-4">
+        <div class="d-flex flex-column gap-2">
+          <label for="siteName" class="d-flex gap-1 align-items-lg-baseline"
+            ><i class="fa-solid fa-book-bookmark"></i>Site Name</label
+          >
+          <input
+            type="text"
+            id="siteName"
+            class="form-control"
+            placeholder="Bookmark Name"
+          />
+        </div>
+        <div class="d-flex flex-column gap-2">
+          <label for="siteUrl" class="d-flex gap-1 align-items-lg-baseline"
+            ><i class="fa-solid fa-link"></i>Site URL</label
+          >
+          <input
+            type="text"
+            id="siteUrl"
+            class="form-control"
+            placeholder="Website URL"
+          />
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-primary" onclick="addSite()">Submit</button>
+      </div>
+    </div>
+    <table class="bg-light mx-auto my-3 text-center" id="table">
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Website Name</th>
+          <th>Visit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    <div class="invalid-bg w-100 h-100 position-absolute d-none" id="invalidCard">
+      <div
+        class="invalid-card position-absolute bg-light p-5 d-flex flex-column gap-4 justify-content-between"
+        id="invalidCard"
+      >
+        <div class="d-flex justify-content-between">
+          <div>
+            <i class="fa-solid fa-circle text-danger"></i>
+            <i class="fa-solid fa-circle text-warning"></i>
+            <i class="fa-solid fa-circle text-success"></i>
+          </div>
+          <button class="border-0 bg-light" onclick="exit()">
+            <i class="fa-solid fa-xmark fs-3"></i>
+          </button>
+        </div>
+        <div>
+          <h5>
+            Site Name or Url is not valid, Please follow the rules below :
+          </h5>
+          <div>
+            <p>
+              <i class="fa-solid fa-caret-right text-danger"></i>&nbsp;Site name
+              must contain at least 3 characters
+            </p>
+            <p>
+              <i class="fa-solid fa-caret-right text-danger"></i>&nbsp;Site URL
+              must be a valid one
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
