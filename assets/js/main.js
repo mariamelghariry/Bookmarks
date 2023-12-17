@@ -1,12 +1,12 @@
 var siteName = document.getElementById("siteName");
 var siteUrl = document.getElementById("siteUrl");
-var invalidCard = document.getElementById("invalidCard")
+var invalidCard = document.getElementById("invalidCard");
 
 var sitesList = [];
 
-if(localStorage.getItem('bookmarList') !== null){
-    sitesList = JSON.parse(localStorage.getItem('bookmarList'));
-    displaySitesList();
+if (localStorage.getItem("bookmarList") !== null) {
+  sitesList = JSON.parse(localStorage.getItem("bookmarList"));
+  displaySitesList();
 }
 
 function addSite() {
@@ -16,7 +16,7 @@ function addSite() {
       url: siteUrl.value,
     };
     sitesList.push(site);
-    localStorage.setItem('bookmarList' , JSON.stringify(sitesList));
+    localStorage.setItem("bookmarList", JSON.stringify(sitesList));
     displaySitesList();
     clearInputs();
   } else {
@@ -45,7 +45,6 @@ function displaySitesList() {
       </button>
     </td>
   </tr>`;
-    
   }
   document.getElementById("tableBody").innerHTML = cartona;
 }
@@ -57,29 +56,29 @@ function clearInputs() {
 
 function deleteSite(index) {
   sitesList.splice(index, 1);
+  localStorage.setItem("bookmarList", JSON.stringify(sitesList));
   displaySitesList();
 }
 
-
-  function validName() {
-    var x = /[a-zA-Z]{3,}/;
-    if (x.test(siteName.value) === true) {
-      return "true";
-    } else {
-      return "false";
-    }
+function validName() {
+  var x = /[a-zA-Z]{3,}/;
+  if (x.test(siteName.value) === true) {
+    return "true";
+  } else {
+    return "false";
   }
-  function validUrl() {
-    var y = /.\.(com)/;
-    if (y.test(siteUrl.value) === true) {
-        return "true";
-    } else {
-      return "false";
-    }
-  }
-function invalidCardAppear(){
-    invalidCard.classList.replace('d-none' , 'd-block')
 }
-function exit(){
-    invalidCard.classList.replace('d-block' , 'd-none')
+function validUrl() {
+  var y = /.\.(com)/;
+  if (y.test(siteUrl.value) === true) {
+    return "true";
+  } else {
+    return "false";
+  }
+}
+function invalidCardAppear() {
+  invalidCard.classList.replace("d-none", "d-block");
+}
+function exit() {
+  invalidCard.classList.replace("d-block", "d-none");
 }
